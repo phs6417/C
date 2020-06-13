@@ -1,0 +1,80 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void sort(int*,int);
+void qsort(int*,int,int)
+
+void sort (int arr[], int N)
+{
+    qsort(arr, 0, N-1);
+}
+ 
+void qsort(int arr[], int start, int end)
+{
+    if (start > end)
+        return;
+ 
+    int key = start;
+    int i = start + 1, j = end , tmp;
+ 
+    while (i <= j)
+    {
+        while (arr[i] < arr[key])
+            i++; 
+ 
+        while (arr[j] > arr[key])
+            j--;
+ 
+        if (i > j)
+	{
+		tmp = arr[j];
+		arr[j] = arr[key];
+		arr[key] = tmp;
+	}
+        else
+	{
+		tmp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = tmp;
+	}
+    }
+ 
+    qsort(arr, start, j-1);
+    qsort(arr, j+1, end);
+}
+
+
+
+int main()
+{
+	int num_cases;
+	int i;
+		
+	ifstream file;
+	file.open("input.txt");
+	
+	file >> num_cases;
+
+	for(i=0;i<num_cases;i++){
+	
+	
+
+
+
+
+
+
+
+
+
+	}file.close();
+	return 0;
+}
+	
