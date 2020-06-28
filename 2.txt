@@ -1,0 +1,61 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+	// 파일 불러오기 
+	ifsteam fi;
+
+	fi.open("input.txt");
+	if (!fi){
+		cerr << "읽기용 파일 오픈 실패" << endl;
+		exit(1);
+	}	
+
+	//끗
+
+	int count = 0, num1=0 , num2=0 ,i=0;
+
+	int plus=0,minus=0,absol=0,mul=0,quan=0,rest=0,max=0,logic=0;
+
+	cin >> count;
+
+  for(i=0; i< count;i++){
+
+	cin>>num1;
+	
+	cin>>num2;
+	
+	plus = num1+num2;
+
+	minus = num1-num2;
+
+	if(num1 > num2)
+		 absol = num1 - num2;
+		else
+		 absol = num2 - num1;
+
+	mul = num1 * num2;
+
+	quan = num1 / num2;
+
+	rest = num1 % num2;
+
+	if(num1 > num2)
+		max = num1;
+	      else
+		max = num2;
+
+	if(num1 == num2)
+		 logic = 1;
+		else
+		 logic = 0;
+
+	cout << plus <<" "<< minus <<" "<< absol <<" "<< mul <<" "<< quan <<" "<< rest <<" "<< max <<" " << logic;
+
+	}
+	return 0;
+}
